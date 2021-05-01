@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Plucky Blog{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  </head>
+
+  <!-- header -->
+  <header>
+    <div>
+      <nav class="navbar">
+        <a href="{% url 'home' %}" class="logo">Plucky Blog</a>
+
+        <label class="menu-icon" for="menu-btn">
+         <span class="navicon"></span>
+        </label>
+        <ul class="menu">
+         <li><a href="{% url 'home' %}">Home</a></li>
+         <li><a href="{% url 'post_new' %}">Write</a></li>
+         <li><a href="{% url 'logout' %}">Log out</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="auth">
+    {% if user.is_authenticated %}
+    <p>Hello {{ user.username }}!</p>
+   {% else %} 
+    <p>You are not logged in.</p>
+    <a href="{% url 'login' %}">Log In</a>
+   {% endif %}
+   {% block content %}
+   {% endblock content %}
+  </div>
+  
+</html>
+   
