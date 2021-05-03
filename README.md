@@ -1,2 +1,2 @@
 # django_plucky_blog
-A Blog App Written in Django
+A [Blog App](https://kels-pluckyblog.herokuapp.com/) Written in Django 
