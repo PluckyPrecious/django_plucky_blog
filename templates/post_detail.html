@@ -1,17 +1,29 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
+<main>
+  <aside>
+    <section class="container" id="container">
+      <div class="post-header">
+        <span class="font-weight-bold"><h2>{{ post.title }}</h2></span> -
+        <span class="text-muted">by {{ post.author }} {{ post.date_time }} </span>
+        <p>{{ post.body }}</p>
+      </div>
+      <a href="{% url 'post_edit' post.pk %}">Edit</a> |
+      <a href="{% url 'post_delete' post.pk %}">Delete</a>
 
-{% block content %}
-   <main>
-      <aside>
-      <section class="container" id="container">
-        <div class="post-entry">
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.body }}</p>
-        </div>
-        <p><a href="{% url 'post_edit' post.pk %}">Edit</a></p>
-        <p><a href="{% url 'post_delete' post.pk %}">Delete</a></p>
-      </section>
-      </aside>
-   </main>
+      <br/><br/>
+      <div class="card-footer">
+         {% for comment in post.comments.all %}
+      <p>
+      
+         <span class="font-weight-bold">
+         {{ comment.author }} -
+         </span>
+         {{ comment }}
+        </p>
+      {% endfor %} 
+      </div>
 
+    </section>
+  </aside>
+</main>
 {% endblock content %}

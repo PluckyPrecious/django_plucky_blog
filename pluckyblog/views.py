@@ -3,6 +3,7 @@ from django.views.generic.edit import (
     CreateView, UpdateView, DeleteView
 )
 from django.urls import reverse_lazy
+from django.contrib.auth import get_user_model
 
 from .models import Post
 
