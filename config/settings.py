@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
     'pluckyblog',
     'accounts',
+    'environs'
 ]
 
 MIDDLEWARE = [
