@@ -1,7 +1,7 @@
 # django_plucky_blog
 A [Blog App](https://kels-pluckyblog.herokuapp.com/) Written in Django 
 
-To run locally, navigate
+To navigate:
 
 - Admin login: admin/
 - Existing user login: accounts/login/
