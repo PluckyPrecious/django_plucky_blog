@@ -3,13 +3,14 @@ A [Blog App](https://kels-pluckyblog.herokuapp.com/) Written in Django
 
 To navigate:
 
-- Admin login: admin/
-- Existing user login: accounts/login/
-- Logout: accounts/logout/
-- Change password: accounts/password_change/
-- Password change done: accounts/password_change/done/
-- accounts/password_reset/
-- accounts/password_reset/done/
-- accounts/reset/
-- accounts/reset/done/
-- New user signup: accounts/signup/
+
+-    [Register page](https://kels-pluckyblog.herokuapp.com/accounts/signup/). 
+
+-    [Login](https://kels-pluckyblog.herokuapp.com/accounts/login/)
+
+-    [Reset password](https://kels-pluckyblog.herokuapp.com/accounts/password_reset/)
+
+-    [Logout](https://kels-pluckyblog.herokuapp.com/accounts/logout/)
+
+-    [Comment](https://kels-pluckyblog.herokuapp.com/)
+   
