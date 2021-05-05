@@ -5,8 +5,13 @@
     <aside>
        <h1>Delete post</h1>
        <form action="" method="post">{% csrf_token %}
+        {% if user.is_authenticated %}
        <p>Are you sure you want to delete "{{ post.title }}"?</p>
        <input type="submit" value="Confirm" value="Back">
+       {% else %} 
+       <p>You cannot delete post.</p>
+       {% endif %}  
+       
     </form>
 
     </aside>
