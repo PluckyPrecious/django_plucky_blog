@@ -22,21 +22,25 @@
         <ul class="menu">
          <li><a href="{% url 'home' %}">Home</a></li>
          <li><a href="{% url 'post_new' %}">Write</a></li>
-         <li><a href="{% url 'signup' %}">Sign Up</a></li>
+         <li><a href="#">About Us</a></li>
         </ul>
       </nav>
     </div>
   </header>
   <div class="auth">
     {% if user.is_authenticated %}
-    <p>Hello {{ user.username }}!</p>
-   {% else %} 
+    <p>Hello {{ request.user }}!</p><a href="#" onClick="document.getElementById('logoutform').submit()"><button type="button">Log Out</button></a>
+    <form id="logoutform" method="POST" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <input type="hidden">
+    </form>
+    {% else %} 
     <p>You are not logged in.</p>
-    <a href="{% url 'login' %}">Log In</a>
-   {% endif %}
-   {% block content %}
-   {% endblock content %}
+    <p>Hello {{ request.user }}!</p>
+    <a href="{% url 'signup' %}">Sign Up</a> | <a href="{% url 'login' %}">Log In</a>
+    {% endif %}
+    <br/><br/>
   </div>
-  
+  {% block content %}
+  {% endblock content %}
 </html>
-   
