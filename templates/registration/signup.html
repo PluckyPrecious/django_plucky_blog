@@ -1,24 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
     <aside>
-        <div class="signup"
+      <div class="signup"
           <h2>Sign Up</h2>
           <form method="post">
-             {% csrf_token %}
-             {{ form.as_p }}
-             <button type="submit">Sign Up</button>
-             <div class="check-input">
-              <input type="checkbox" id="terms" name="terms" />
-              <label for="terms">
-                  <a href="#"> I agree to the Terms and Conditions</a>
-              </label>
-              <span class="error-block"></span>
-          </div>
-             <p>Already got an account?
-               <a href="{% url 'login' %}">Log In</a></p>
-             </p>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-primary" type="submit">Sign Up</button>
           </form>
+          <div class="check-input">
+            <input type="checkbox" id="terms" name="terms" />
+            <label for="terms">
+                <a href="#"> I agree to the Terms and Conditions</a>
+            </label>
+            <span class="error-block"></span>
+          </div>
+          <p>Already got an account?
+               <a href="{% url 'login' %}">Log In</a></p>
+          </p> 
       </div>
     </aside>
 {% endblock content %}

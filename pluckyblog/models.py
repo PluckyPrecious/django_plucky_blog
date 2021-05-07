@@ -5,19 +5,20 @@ User = get_user_model()
 
 
 import pytz
-from datetime import datetime
+from django.utils import timezone
 
 
 # Create your models here.
 
 class Post(models.Model):
-    title = models.CharField (max_length=200)
-    date_added = models.DateTimeField(auto_now_add=True)
+    title = models.CharField (max_length=100)
+
+    body = models.TextField()
+    date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(
         'auth.User',
-        on_delete=models.CASCADE,
+        on_delete=models.SET_NULL, null=True
     )
-    body = models.TextField()
 
     def __str__(self):
         return self.title
@@ -26,20 +27,20 @@ class Post(models.Model):
         return reverse('post_detail', args=[str(self.pk)])
 
 class Comment(models.Model):
-    post = models.ForeignKey(
+    post_connected = models.ForeignKey(
         Post,
         on_delete=models.CASCADE,
         related_name='comments',
     )
-    comment = models.CharField(max_length=140)
-    date_added = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE,
     )
-
+    body = models.TextField()
+    date_posted = models.DateTimeField(default=timezone.now)
+    
     def __str__(self):
-        return self.comment
+        return str(self.author)
 
     def get_absolute_url(self):
         return reverse('post_detail')
