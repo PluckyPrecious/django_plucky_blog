@@ -35,7 +35,6 @@
     <input type="hidden">
     </form>
     {% else %} 
-    <p>You are not logged in.</p>
     <p>Hello {{ request.user }}!</p>
     <a href="{% url 'signup' %}">Sign Up</a> | <a href="{% url 'login' %}">Log In</a>
     {% endif %}
