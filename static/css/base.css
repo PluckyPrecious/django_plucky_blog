@@ -1,7 +1,7 @@
 html {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 *, *::before, *::after {
@@ -24,22 +24,62 @@ body {
     margin: 0.5rem 0;
 }
 
-.post-entry h2 a,
-.post-entry h2 a:visited {
+a.btn.btn-primary {
+   background-color: #e52165;
+   color: #FFF;
+}
+
+a.btn.btn-danger {
+    color: #FFF;
+ }
+
+button.btn.btn-info {
+    background-color: #e52165!important;
+    color: #FFF;
+}
+
+button.btn.btn-primary {
+    background-color: #e52165;
+    color: #FFF;
+}
+
+button {
+    background-color: #e52165;
+    color: #FFF;
+}
+
+input {
+    color: #FFF;
+}
+
+.auth a {
     color: #e52165;
-    text-decoration: none;
 }
 
-.post-entry h2 a:hover {
-    color:#0d1137;
+p a {
+    color: #e52165;
 }
 
-a {
-    text-decoration: none;
+label a {
+    color: #e52165;
+}
+
+main a {
+    color: #e52165;
+}
+
+div.form-group {
+    padding: 30px 30px 30px;
+}
+
+form input {
+    background-color: #e52165;
+    color: #FFF;
 }
 
 ul {
     list-style-type: none;
+    padding: 30px 30px 30px;
 }
 
 header {
@@ -56,6 +96,10 @@ footer {
 h2 {
     color: #e52165;
     font-size: 2.5rem;
+}
+
+h3 {
+    padding: 30px 30px 30px;
 }
 
 label {
@@ -109,13 +153,6 @@ main {
     column-gap: 10px;
 }
 
-aside {
-    background-color: #faa6c3;
-    width: auto;
-    text-align: center;
-    padding: 30px;
-}
-
 .main-text {
     padding: 20% 15%;
 }
@@ -140,6 +177,32 @@ p {
 
 .main-text a:hover {
     text-decoration: none;
+}
+
+.card {
+    box-shadow: 0 16px 48px #e52165;
+}
+
+.masthead {
+    background: #faa6c3;
+    height: auto;
+    text-align: center;
+    padding-bottom: 30px;
+    box-shadow: 0 16px 48px #e52165;
+    padding-top: 10px;
+}
+
+aside {
+    background-color: #faa6c3;
+    width: auto;
+    text-align: center;
+    padding: 30px;
+}
+
+a.btn.btn-outline-info {
+    background-color: #e52165;
+    color: #FFF;
+    box-shadow: #e52165;
 }
 
 /* Footer style */

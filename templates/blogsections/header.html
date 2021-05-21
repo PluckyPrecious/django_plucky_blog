@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Plucky Blog{% endblock %}</title>
-
+    <meta name="google" content="notranslate" />
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous" />
   </head>
 
   <!-- header -->
@@ -25,6 +27,22 @@
          <li><a href="#">About Us</a></li>
         </ul>
       </nav>
+    </div>
+  </header>
+  <header class="masthead">
+    <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h3 class="site-heading my-4 mt-3 text-white">
+                Welcome to my awesome Blog
+              </h3>
+              <p class="text-light">Get your Plucky groove on..! &nbsp</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
   <div class="auth">

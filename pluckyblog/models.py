@@ -7,19 +7,28 @@ User = get_user_model()
 import pytz
 from django.utils import timezone
 
+STATUS = (
+    (0,"Draft"),
+    (1,"Publish")
+)
 
 # Create your models here.
 
 class Post(models.Model):
-    title = models.CharField (max_length=100)
-
-    body = models.TextField()
-    date_posted = models.DateTimeField(default=timezone.now)
+    title = models.CharField(max_length=200, unique=True)
     author = models.ForeignKey(
         'auth.User',
-        on_delete=models.SET_NULL, null=True
+        on_delete=models.SET_NULL, null=True,
+        related_name='posts',
     )
+    date_updated = models.DateTimeField(default=timezone.now)
+    body = models.TextField()
+    date_posted = models.DateTimeField(default=timezone.now)
+    status = models.IntegerField(choices=STATUS, default=0)
 
+    class Meta:
+        ordering = ['-date_posted']
+    
     def __str__(self):
         return self.title
 
@@ -38,9 +47,13 @@ class Comment(models.Model):
     )
     body = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        ordering = ['date_posted']
+
     
     def __str__(self):
-        return str(self.author)
+        return 'Comment {} by {}'.format(self.body, self.author)
 
     def get_absolute_url(self):
         return reverse('post_detail')
